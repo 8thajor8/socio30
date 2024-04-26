@@ -1,0 +1,130 @@
+.condiciones{
+    background-color: $rosa;
+    padding: 5rem 0;
+    @include tablet {
+       
+    }
+    h3,p{
+        text-align: center;
+        color: $blanco;
+    }
+    p{
+        padding: 2rem 5rem;
+    }
+    h3{
+        margin-bottom: 4rem;
+    }
+    
+}
+
+.condiciones-contenedor{
+    margin-bottom: 5rem;
+    
+    @include tablet {
+        width: 30%;
+        @include grid(1, 5rem);
+        .contenedor{
+            width: 50%;
+        }
+    }
+    p{
+        color: $negro;
+    }
+    
+    
+}
+.condiciones-contenedor2{
+    margin-bottom: 5rem;
+    @include tablet {
+        @include grid(2, 5rem);
+        
+    }
+    p{
+        color: $negro;
+    }
+    
+    
+}
+
+.condiciones-detalles{
+    padding-top: 2rem;
+    
+    .nombre-condiciones-detalles{
+        &.descuentos{
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+        &:after{
+            content: '';
+            display: block;
+            width: 20rem;
+            height: 10rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 2rem auto 0 auto;
+        }
+    }
+}
+
+.valores .nombre-condiciones-detalles:after{
+    background-image: url(/src/img/valores.svg);
+}
+
+.beneficios .nombre-condiciones-detalles:after{
+    background-image: url(/src/img/beneficios.svg);
+}
+
+.requisitos .nombre-condiciones-detalles:after{
+    background-image: url(/src/img/requisites.svg);
+}
+
+.tabla{
+    @include resetear-lista;
+    margin-bottom: 2rem;
+    &.beneficios{
+
+        li{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            p{
+                font-size: 1.6rem;
+                padding: 1.5rem 3rem;
+            }
+        }
+    }
+    li{
+        
+        padding: 2.5rem;
+        font-weight: 700;
+        span{
+            font-weight: 400;
+        }
+    }
+}
+
+.icons{
+    background-color: #e9e9e9;
+    border-radius: 50%;
+    
+    img{
+        height: 4rem;
+        width: 4rem;
+    }
+}
+
+.bg-amarillo{
+    background-color: $amarillo;
+    li:nth-child(odd){
+        background-color: darken($amarillo, 15%);
+    }
+}
+
+.bg-verde{
+    background-color: $verde;
+    li:nth-child(odd){
+        background-color: darken($verde, 10%);
+    }
+}
