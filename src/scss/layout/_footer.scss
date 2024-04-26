@@ -11,10 +11,12 @@
     }
     .contenido-header{
         padding: 2rem;
-        @include tablet {
+       
             display: flex;
             justify-content: space-between;
             align-items: center;
+        h3{
+            margin: 0;
         }
     }
     .imagen-logo{

@@ -557,15 +557,15 @@ img {
 }
 
 .valores .nombre-condiciones-detalles:after {
-  background-image: url(/src/img/valores.svg);
+  background-image: url(../src/img/valores.svg);
 }
 
 .beneficios .nombre-condiciones-detalles:after {
-  background-image: url(/src/img/beneficios.svg);
+  background-image: url(../src/img/beneficios.svg);
 }
 
 .requisitos .nombre-condiciones-detalles:after {
-  background-image: url(/src/img/requisites.svg);
+  background-image: url(../src/img/requisites.svg);
 }
 
 .tabla {
@@ -678,13 +678,12 @@ img {
 }
 .footer .contenido-header {
   padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-@media (min-width: 768px) {
-  .footer .contenido-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.footer .contenido-header h3 {
+  margin: 0;
 }
 .footer .imagen-logo {
   display: flex;
