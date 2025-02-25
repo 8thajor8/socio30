@@ -3,63 +3,46 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function iniciarApp(){
-    crearGaleria();
+
+    vigencia();
+    detallesModal();
 }
 
-function crearGaleria(){
-    const galeria = document.querySelector('.galeria-imagenes');
 
-    for (let i=1 ; i <= 12 ; i++){
-        const imagen = document.createElement('picture');
 
-        imagen.innerHTML = `
-        <source srcset="build/img/thumb/${i}.avif" type="image/avif" >
-        <source srcset="build/img/thumb/${i}.webp" type="image/webp" >
-       
-        <img loading="lazy" width="200" height="300" src="build/img/thumb/${i}.jpg" alt="Imagen Galeria">
-        `;
+function vigencia(){
+    rango = document.getElementById("rangoTiempo");
+    if(rango){
+        rango.addEventListener("change", function () {
+            let rangoSeleccionado = rango.value; 
+            let celdasPrecio = document.querySelectorAll(".precio");
 
-        imagen.onclick = function() {
-            mostrarImagen(i);
+            celdasPrecio.forEach(celda => {
+                celda.innerText = "$" + celda.getAttribute(`data-${rangoSeleccionado}`);
+            });
+        });
+    };
+}
+
+function detallesModal(){
+    const modal = document.getElementById("modalDetalles");
+    const btn = document.getElementById("verDetallesBtn");
+    const closeBtn = document.querySelector(".close");
+
+    // Abrir modal
+    btn.addEventListener("click", function () {
+        modal.style.display = "flex";
+    });
+
+    // Cerrar modal
+    closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    // Cerrar modal al hacer clic fuera de él
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
         }
-
-        galeria.appendChild(imagen);
-    }
-}
-
-function mostrarImagen(id){
-
-    const imagen = document.createElement('picture');
-
-    imagen.innerHTML = `
-    <source srcset="build/img/grande/${id}.avif" type="image/avif" >
-    <source srcset="build/img/grande/${id}.webp" type="image/webp" >
-   
-    <img loading="lazy" width="200" height="300" src="build/img/grande/${id}.jpg" alt="Imagen Galeria">
-    `;
-
-    const overlay = document.createElement('div');
-    overlay.appendChild(imagen);
-    overlay.classList.add('overlay');
-    overlay.onclick = function (){
-        const body = document.querySelector('body');
-        body.classList.remove('fijar-body');
-        overlay.remove();
-    }
-
-    const cerrarModal = document.createElement('p');
-    cerrarModal.textContent = 'X';
-    cerrarModal.classList.add('btn-cerrar')
-    cerrarModal.onclick= function(){
-        const body = document.querySelector('body');
-        body.classList.remove('fijar-body');
-        overlay.remove();
-    }
-    
-    overlay.appendChild(cerrarModal);
-    
-    const body = document.querySelector('body');
-    body.appendChild(overlay);
-    body.classList.add('fijar-body');
-
+    });
 }

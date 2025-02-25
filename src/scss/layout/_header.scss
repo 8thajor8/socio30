@@ -1,5 +1,5 @@
 .header{
-    background-color: $verde;
+    background-color: $azul;
     
     h1{
         color: $blanco;
@@ -31,7 +31,9 @@
         display: block;
         text-align: center;
         color: $blanco;
-        font-size: 2.4rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.8rem;
         margin-bottom: 1rem;
         @include tablet {
             margin: 0;

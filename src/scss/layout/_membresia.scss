@@ -2,6 +2,7 @@
     padding: 5rem 0;
     @include tablet {
         @include grid(2, 5rem);
+        align-items: center;
     }
     .imagen-logo{
         text-align: center;
@@ -10,6 +11,13 @@
             width: 40%;
             margin: auto;
         }
+    }
+    .imagen{
+        
+            img{
+                border-radius: 25px;
+            }
+        
     }
 
 }

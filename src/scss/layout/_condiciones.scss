@@ -1,5 +1,5 @@
 .condiciones{
-    background-color: $rosa;
+    background-color: $azul;
     padding: 5rem 0;
     @include tablet {
        
@@ -21,7 +21,7 @@
     margin-bottom: 5rem;
     
     @include tablet {
-        width: 30%;
+        width: 60%;
         @include grid(1, 5rem);
         .contenedor{
             width: 50%;
@@ -29,6 +29,9 @@
     }
     p{
         color: $negro;
+    }
+    @include desktop {
+        width: 45%;
     }
     
     
@@ -48,7 +51,7 @@
 
 .condiciones-detalles{
     padding-top: 2rem;
-    
+    border-radius: 25px;
     .nombre-condiciones-detalles{
         &.descuentos{
             font-size: 1.7rem;
@@ -115,16 +118,9 @@
     }
 }
 
-.bg-amarillo{
-    background-color: $amarillo;
+.bg-blanco{
+    background-color: $blanco;
     li:nth-child(odd){
-        background-color: darken($amarillo, 15%);
-    }
-}
-
-.bg-verde{
-    background-color: $verde;
-    li:nth-child(odd){
-        background-color: darken($verde, 10%);
+        background-color: darken($blanco, 8%);
     }
 }
